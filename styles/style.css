@@ -1,14 +1,17 @@
 html {
     box-sizing: border-box;
-    
 }
 
 body {
     margin: 0;
+    font-family: Garamond;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 90%;
 }
 
 header {
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding-left: 20%;
@@ -18,33 +21,26 @@ header {
 }
 
 header img {
-    height: 100px;
-    width: auto;
+    display: none;
 }
 
+
+
 nav {
-    margin: 0 8%;
-    background-color: #cfe0e8;
+    margin: 0;
+    background-color: #B26200;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    
 }
 
 nav a {
-    background: #A0A0A0;
-    border-radius: 4px;
-    color: #193366;
-    font-family: "Trebuchet MS", Helvetica, sans-serif;
-    font-size: 14px;
-    height: 20px;
-    margin: 15px;
-    text-align: center;
-    text-decoration: none;
-    padding: 5px;
-    width: 140px;
+    width: 22%;
 }
 
 nav a:hover {
-    background: gray;
+    background: #FF8B00;
     color: white;
 }
 
@@ -54,17 +50,24 @@ nav a:hover {
 }
 
 main {
-    margin: 0 8%;
+    margin: 0;
     background-color: #cfe0e8;
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     justify-content: space-around;
+    min-height: 75vh;
+}
+
+p {
+    font-size: 90%;
 }
 
 
 article {
-    width: 40%;
-    min-width: 350px;
+    width: 94%;
+    margin-left: 2%;
+    margin-right: 2%;
+    /*min-width: 350px;*/
     
 }
 
@@ -88,8 +91,100 @@ footer img {
 
 ul {
     list-style-type: none;
+    line-height: 25px;
+}
+
+a {
+    text-decoration: none;
+    color: #0079B2;
 }
 
 .hide {
     display: none;
+}
+
+.show {
+    display: inline-block;
+}
+
+.expand, .shrink {
+    cursor: pointer;
+}
+
+.pull-right {
+    float: right;
+    margin-left: 1%;
+}
+
+.pull-left {
+    float: left;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.general {
+    width: 30%;
+}
+
+.contact {
+    text-align: center;
+}
+
+.contact img {
+    width: 48px;
+    height: 48px;
+}
+
+.contact ul li {
+    line-height: 40px;
+}
+
+.shrink, .expand {
+    color: #0079B2;
+}
+
+.about-skills {
+    display: none;
+}
+
+@media (min-width: 760px) {
+    body {
+        font-size: 100%;
+    }
+    main {
+        margin: 0 8%;
+        flex-direction: row-reverse;
+    }
+    header {
+        flex-direction: row;
+    }
+    header img {
+        height: 100px;
+        width: auto;
+        display: block;
+    }
+    nav {
+        margin: 0 8%;
+        background-color: #cfe0e8;
+    }
+    nav a {
+        background: #B26200;
+        border-radius: 4px;
+        color: #193366;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+        font-size: 14px;
+        height: 20px;
+        margin: 15px;
+        text-align: center;
+        text-decoration: none;
+        padding: 5px;
+        width: 140px;
+    }
+    .about-skills {
+        display: block;
+    }
 }
