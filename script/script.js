@@ -1,18 +1,11 @@
-window.addEventListener('load', onHtmlLoad);
+/* global $ */
+let description = document.getElementsByClassName('description');
+$('.description-content').hide();
+for (let i = 0; i < description.length; i++) {
+    description[i].addEventListener('click', populate);
+}
 
-function onHtmlLoad() {
-    let expand = document.getElementsByClassName('expand');
-    let shrink = document.getElementsByClassName('shrink');
-    for (let i = 0; i < expand.length; i++) {
-        expand[i].addEventListener('click', function(event) {
-            event.path[1].lastElementChild.className = 'show';
-            event.path[0].className = 'hide expand';
-        });
-    }
-    for (let i = 0; i < shrink.length; i++) {
-        shrink[i].addEventListener('click', function(event) {
-            event.path[1].className = 'hide';
-            event.path[2].firstElementChild.className = 'show expand';
-        });
-    }
+function populate(event) {
+    $('.description-content').slideUp('slow');
+    $('#' + event.path[0].textContent).slideDown('slow');
 }
